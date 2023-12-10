@@ -32,7 +32,7 @@ This project demonstrates a Node.js application that integrates with RabbitMQ, a
    docker compose up
    ```
 
-### User API
+### API
 
 POST
 
