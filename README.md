@@ -70,5 +70,3 @@ Description: The message was successfully published to the RabbitMQ queue.
   "message": "The request must include a non-empty 'message' property in the request body."
 }
 ```
-
-Description: The request is missing the required 'message' parameter, or the parameter is empty.
