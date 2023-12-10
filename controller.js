@@ -7,7 +7,7 @@ const sendMessage = async (req, res) => {
     if (!message)
       return res.status(400).json({
         status: "BAD_REQUEST",
-        message: "The 'message' parameter cannot be empty.",
+        message: "The request must include a non-empty 'message' property in the request body.",
       });
 
     const queue = "my-queue";
