@@ -15,6 +15,7 @@ class RabbitMQConfig {
     this.channel = null;
   }
 
+  // Establishes a connection
   async connect() {
     try {
       const conn = await amqp.connect(RABBITMQ_URL);
@@ -26,6 +27,7 @@ class RabbitMQConfig {
     }
   }
 
+  // Creates a queue with the specified name and options
   async createQueue(queueName, options) {
     if (!this.channel) {
       return this.connect();
@@ -33,6 +35,7 @@ class RabbitMQConfig {
     await this.channel.assertQueue(queueName, options);
   }
 
+  // Publishes a message to the specified queue
   async publishToQueue(queueName, message) {
     if (!this.channel) {
       return this.connect();
@@ -41,6 +44,7 @@ class RabbitMQConfig {
     console.log(`✅  Send Message to ${queueName} in ${RABBITMQ_VHOST}`);
   }
 
+  // Subscribes to messages from the specified queue and invokes the callback
   async subscribeToQueue(queueName, callback, options) {
     if (!this.channel) {
       return this.connect();
@@ -56,6 +60,7 @@ class RabbitMQConfig {
     );
   }
 
+  // Closes the channel
   async close() {
     await this.channel.close();
   }

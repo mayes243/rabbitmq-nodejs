@@ -4,6 +4,7 @@ const sendMessage = async (req, res) => {
   try {
     const { message } = req.body;
 
+    // validation
     if (!message)
       return res.status(400).json({
         status: "BAD_REQUEST",
