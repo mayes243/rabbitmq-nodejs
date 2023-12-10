@@ -32,7 +32,7 @@ This project demonstrates a Node.js application that integrates with RabbitMQ, a
    docker compose up
    ```
 
-### Description
+### User API
 
 POST
 
@@ -41,9 +41,9 @@ http://localhost:8080/api/send
 
 ```
 
-This endpoint allows you to send a message using RabbitMQ. It expects a JSON payload with a `message` parameter.
+This endpoint allows you to send a message using RabbitMQ. It expects a JSON payload with a `message` request body.
 
-### Request
+### Request or payload
 
 ```json
 {
